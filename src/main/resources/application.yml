@@ -1,0 +1,23 @@
+security:
+  rememberMeKey: key
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:30002/mongod
+
+mongoDb:
+  databaseName: mongod
+
+mongock:
+  runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.est0y.diceChess.mongock.changelog
+  mongo-db:
+    write-concern:
+      journal: false
+    read-concern: local
+logging:
+  level:
+    org:
+      springframework:
+        security=DEBUG:

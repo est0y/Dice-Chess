@@ -10,7 +10,7 @@ import java.util.List;
 
 @ChangeLog
 public class DatabaseChangelog {
-
+    //password:1
     private final User editor = new User("user1",
             "$2a$12$qKHd09USqIp8f/FgzYe8r.7lEUCBEp3cCEYOEZWd1gCjtwGQSsbo6",
             false,

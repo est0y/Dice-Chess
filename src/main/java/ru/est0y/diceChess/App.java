@@ -16,8 +16,5 @@ public class App {
         app.getBean(GameProducer.class).createGames();
     }
 
-    @Bean
-    BoardSize boardSize() {
-        return new BoardSize(8, 8);
-    }
+
 }

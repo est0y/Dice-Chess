@@ -1,4 +1,4 @@
-package ru.est0y.diceChess.services.rules.piecesPipeline;
+package ru.est0y.diceChess.services.rules;
 
 import org.springframework.stereotype.Service;
 import ru.est0y.diceChess.domain.board.Board;
@@ -16,13 +16,13 @@ public class BoardUtils {
     public boolean isLastHorizontal(Square square, Board board) {
         var boardSize = board.getSize();
         var y = square.getY();
-        return y == boardSize.getVerticalSize() || y == 1;
+        return y == boardSize.getY() || y == 1;
     }
 
     public boolean isSquareExists(Square square, Board board) {
         var x = square.getX();
         var y = square.getY();
         var boardSize = board.getSize();
-        return x >= 1 && y >= 1 && x <= boardSize.getHorizontalSize() && y <= boardSize.getVerticalSize();
+        return x >= 1 && y >= 1 && x <= boardSize.getX() && y <= boardSize.getY();
     }
 }

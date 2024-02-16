@@ -37,8 +37,8 @@ public class PlayersPiecesUtils {
     public Map<Class<? extends AbstractPiece>, List<Square>> getAllPlayerPieces(int team, Board board) {
         Map<Class<? extends AbstractPiece>, List<Square>> result = new HashMap<>();
         var boardSize = board.getSize();
-        for (var x = 1; x <= boardSize.getHorizontalSize(); x++) {
-            for (var y = 1; y <= boardSize.getVerticalSize(); y++) {
+        for (var x = 1; x <= boardSize.getX(); x++) {
+            for (var y = 1; y <= boardSize.getY(); y++) {
                 var square = squareCache.getSquare(x, y);
                 var optionalPiece = board.getPiece(square);
                 if (optionalPiece.isPresent() && optionalPiece.get().getTeam() == team) {
@@ -55,8 +55,8 @@ public class PlayersPiecesUtils {
         Map<Class<? extends AbstractPiece>, List<PieceLocation>> result = new HashMap<>();
         PIECE_CLASSES.forEach(c -> result.computeIfAbsent(c, (k) -> new ArrayList<>()));
         var boardSize = board.getSize();
-        for (var x = 1; x <= boardSize.getHorizontalSize(); x++) {
-            for (var y = 1; y <= boardSize.getVerticalSize(); y++) {
+        for (var x = 1; x <= boardSize.getX(); x++) {
+            for (var y = 1; y <= boardSize.getY(); y++) {
                 var square = squareCache.getSquare(x, y);
                 var optionalPiece = board.getPiece(square);
                 if (optionalPiece.isPresent() && optionalPiece.get().getTeam() == team) {

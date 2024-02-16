@@ -6,6 +6,7 @@ import org.springframework.http.CacheControl;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import ru.est0y.diceChess.domain.board.BoardSize;
 
 import java.time.Duration;
 
@@ -13,7 +14,7 @@ import java.time.Duration;
 @EnableWebMvc
 public class WebConfig {
     @Bean
-    public WebMvcConfigurer configurer () {
+    public WebMvcConfigurer configurer() {
         return new WebMvcConfigurer() {
 
             @Override
@@ -25,11 +26,16 @@ public class WebConfig {
                         .addResourceLocations("classpath:/static/js/");
 
                 registry.addResourceHandler("/webjars/**")
-                       // .addResourceLocations("/webjars/");
+                        // .addResourceLocations("/webjars/");
                         .addResourceLocations("classpath:/META-INF/resources/webjars/")
                         .resourceChain(false);
 
             }
         };
+    }
+
+    @Bean
+    public BoardSize boardSize() {
+        return new BoardSize(8, 8);
     }
 }

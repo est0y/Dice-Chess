@@ -6,7 +6,7 @@ import ru.est0y.diceChess.services.IllegalMoveException;
 import ru.est0y.diceChess.domain.board.Board;
 import ru.est0y.diceChess.domain.Move;
 import ru.est0y.diceChess.domain.pieces.Pawn;
-import ru.est0y.diceChess.services.rules.piecesPipeline.BoardUtils;
+import ru.est0y.diceChess.services.rules.BoardUtils;
 
 @Service
 @RequiredArgsConstructor

@@ -32,8 +32,8 @@ public class ChessBoardNavigator implements BoardNavigator {
         var y = square.getY();
         var newX = x + horizontalTerm;
         var newY = y + verticalTerm;
-        var maxX = boardSize.getHorizontalSize();
-        var maxY = boardSize.getVerticalSize();
+        var maxX = boardSize.getX();
+        var maxY = boardSize.getY();
         if (newX <= maxX && newY <= maxY && newX > 0 && newY > 0) {
             return squareCache.getSquare(newX, newY);
         } else {

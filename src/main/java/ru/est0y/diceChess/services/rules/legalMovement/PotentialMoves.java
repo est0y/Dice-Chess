@@ -13,7 +13,7 @@ import ru.est0y.diceChess.domain.pieces.Queen;
 import ru.est0y.diceChess.domain.pieces.Rook;
 import ru.est0y.diceChess.services.directions.BoardNavigator;
 import ru.est0y.diceChess.services.directions.NotExistSquareException;
-import ru.est0y.diceChess.services.rules.piecesPipeline.BoardUtils;
+import ru.est0y.diceChess.services.rules.BoardUtils;
 import ru.est0y.diceChess.domain.board.Board;
 import ru.est0y.diceChess.services.rules.offsets.OffsetUtils;
 

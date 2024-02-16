@@ -13,7 +13,7 @@ public class GameProducer {
     private final GameService gameService;
 
     public void createGames() {
-        var game = gameCreator.createGame("1", "user", "editor",
+        var game = gameCreator.createGame("1", "user1", "user2",
                 "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
         gameService.save(game);
     }

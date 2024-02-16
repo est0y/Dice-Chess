@@ -1,3 +1,8 @@
+game:
+  board-size:
+    x: 8
+    y: 8
+
 security:
   rememberMeKey: key
 spring:

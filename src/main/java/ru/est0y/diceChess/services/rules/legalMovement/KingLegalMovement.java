@@ -8,7 +8,7 @@ import ru.est0y.diceChess.domain.pieces.King;
 import ru.est0y.diceChess.services.directions.BoardNavigator;
 import ru.est0y.diceChess.services.directions.MoveDirectionManager;
 import ru.est0y.diceChess.services.rules.PieceRulesUtils;
-import ru.est0y.diceChess.services.rules.piecesPipeline.BoardUtils;
+import ru.est0y.diceChess.services.rules.BoardUtils;
 import ru.est0y.diceChess.domain.board.Board;
 
 import java.util.Arrays;

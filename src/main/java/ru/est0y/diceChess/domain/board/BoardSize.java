@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public class BoardSize {
-    private final int horizontalSize;
+    private final int x;
 
-    private final int verticalSize;
+    private final int y;
 }

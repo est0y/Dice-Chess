@@ -11,13 +11,13 @@ import java.util.List;
 @ChangeLog
 public class DatabaseChangelog {
 
-    private final User editor = new User("editor",
+    private final User editor = new User("user1",
             "$2a$12$qKHd09USqIp8f/FgzYe8r.7lEUCBEp3cCEYOEZWd1gCjtwGQSsbo6",
             false,
             "ROLE_USER"
     );
 
-    private final User user = new User("user",
+    private final User user = new User("user2",
             "$2a$12$qKHd09USqIp8f/FgzYe8r.7lEUCBEp3cCEYOEZWd1gCjtwGQSsbo6",
             false,
             "ROLE_USER"

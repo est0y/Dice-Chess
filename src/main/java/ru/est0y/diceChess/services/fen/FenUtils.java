@@ -2,6 +2,7 @@ package ru.est0y.diceChess.services.fen;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.est0y.diceChess.config.props.GameProps;
 import ru.est0y.diceChess.domain.AbstractPiece;
 import ru.est0y.diceChess.domain.Game;
 import ru.est0y.diceChess.domain.Square;
@@ -36,6 +37,8 @@ public class FenUtils {
 
     private final SquareCache squareCache;
 
+    private final GameProps gameProps;
+
     public int getTeam(String fen) {
         var fenParts = fen.split(" ");
         String color = fenParts[1];
@@ -66,7 +69,7 @@ public class FenUtils {
             }
         }
 
-        return new BoardImpl(map);
+        return new BoardImpl(map,gameProps.getBoardSize());
     }
 
 

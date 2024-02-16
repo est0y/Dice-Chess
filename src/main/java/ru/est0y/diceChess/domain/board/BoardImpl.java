@@ -16,6 +16,8 @@ import java.util.stream.Collectors;
 public class BoardImpl implements Board {
     private final Map<Square, AbstractPiece> pieces;
 
+    private final BoardSize boardSize;
+
     @Override
     public Optional<AbstractPiece> getPiece(Square square) {
         return Optional.ofNullable(pieces.get(square));
@@ -33,12 +35,12 @@ public class BoardImpl implements Board {
 
     @Override
     public BoardSize getSize() {
-        return new BoardSize(8, 8);
+        return boardSize;
     }
 
     @Override
     public Board clone() {
-        return new BoardImpl(new HashMap<>(pieces));
+        return new BoardImpl(new HashMap<>(pieces),boardSize);
     }
 
     @Override

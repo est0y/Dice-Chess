@@ -31,10 +31,10 @@ public class GameCreator {
         var diceChessBoard = new DiceChessBoardImpl(board, playersPiecesUtils);
         var game = new Game(gameId, List.of(player1, player2), player1, new ArrayList<>(), diceChessBoard);
         diceUtils.rollDices(game);
-        boolean isNotExistsMoves = !diceUtils.isExistsMoves(game);
+        boolean isNotExistsMoves = diceUtils.isNotExistsMoves(game);
         while (isNotExistsMoves) {
             afterMove.endMove(game);
-            isNotExistsMoves = !diceUtils.isExistsMoves(game);
+            isNotExistsMoves = diceUtils.isNotExistsMoves(game);
         }
         return game;
     }

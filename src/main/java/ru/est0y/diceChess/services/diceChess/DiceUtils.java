@@ -35,12 +35,12 @@ public class DiceUtils {
     private final LegalMovementManager legalMovementManager;
 
 
-    public boolean isExistsMoves(Game game) {
+    public boolean isNotExistsMoves(Game game) {
         var player = game.getTurnHolder();
         var die = game.getLegalPieces();
         var board = game.getBoard();
         var playerPieces = board.getPlayerPieces(player.getTeamNumber());
-        return die.stream().anyMatch(clazz -> playerPieces.get(clazz).stream()
+        return die.stream().noneMatch(clazz -> playerPieces.get(clazz).stream()
                 .anyMatch(p -> !legalMovementManager.getAllLegalMoves(p.getSquare(), board).isEmpty()));
     }
 

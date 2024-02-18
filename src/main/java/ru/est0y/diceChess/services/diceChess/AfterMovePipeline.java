@@ -25,10 +25,10 @@ public class AfterMovePipeline {
         if (game.getLegalPieces().isEmpty()) {
             afterMove.endMove(game);
         }
-        boolean isNotExistsMoves = !diceUtils.isExistsMoves(game);
+        boolean isNotExistsMoves = diceUtils.isNotExistsMoves(game);
         while (isNotExistsMoves) {
             afterMove.endMove(game);
-            isNotExistsMoves = !diceUtils.isExistsMoves(game);
+            isNotExistsMoves = diceUtils.isNotExistsMoves(game);
         }
     }
 }

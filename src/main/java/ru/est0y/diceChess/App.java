@@ -12,6 +12,7 @@ public class App {
     /*
      white: user1  password:1
      black: user2 password:1
+     url: http://localhost:8080/room/1
      */
     public static void main(String[] args) {
         var app = SpringApplication.run(App.class);

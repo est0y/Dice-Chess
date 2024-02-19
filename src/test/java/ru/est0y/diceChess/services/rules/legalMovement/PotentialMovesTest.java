@@ -1,4 +1,4 @@
-package ru.est0y.services.rules.legalMovement;
+package ru.est0y.diceChess.services.rules.legalMovement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

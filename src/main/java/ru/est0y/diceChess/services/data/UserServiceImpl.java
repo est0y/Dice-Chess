@@ -1,9 +1,10 @@
-package ru.est0y.diceChess.services;
+package ru.est0y.diceChess.services.data;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.est0y.diceChess.domain.security.User;
 import ru.est0y.diceChess.repositories.UserRepository;
+import ru.est0y.diceChess.services.data.UserService;
 
 import java.util.Optional;
 

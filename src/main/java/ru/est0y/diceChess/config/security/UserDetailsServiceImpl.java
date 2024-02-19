@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import ru.est0y.diceChess.services.UserService;
+import ru.est0y.diceChess.services.data.UserService;
 
 
 @AllArgsConstructor

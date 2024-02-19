@@ -2,7 +2,7 @@ package ru.est0y.diceChess;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.est0y.diceChess.services.GameService;
+import ru.est0y.diceChess.services.data.GameService;
 
 @Service
 @RequiredArgsConstructor

@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
-import ru.est0y.diceChess.services.UserService;
+import ru.est0y.diceChess.services.data.UserService;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 

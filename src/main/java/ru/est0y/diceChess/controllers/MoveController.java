@@ -7,7 +7,7 @@ import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 import ru.est0y.diceChess.domain.Move;
-import ru.est0y.diceChess.services.GameService;
+import ru.est0y.diceChess.services.data.GameService;
 import ru.est0y.diceChess.services.messaging.GameMessagingService;
 import ru.est0y.diceChess.services.movingPipeline.MovePipeline;
 

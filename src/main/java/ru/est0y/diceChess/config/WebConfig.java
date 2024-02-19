@@ -34,8 +34,4 @@ public class WebConfig {
         };
     }
 
-    @Bean
-    public BoardSize boardSize() {
-        return new BoardSize(8, 8);
-    }
 }

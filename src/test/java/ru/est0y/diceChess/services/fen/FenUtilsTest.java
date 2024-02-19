@@ -1,4 +1,4 @@
-package ru.est0y.services.fen;
+package ru.est0y.diceChess.services.fen;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -38,8 +38,7 @@ class FenUtilsTest {
                 "https://lichess.org/editor/rnbqkbnr/ppppppp1/7p/8/8/3B4/PPPPPPPP/R1BQNBN1_w_HAkq_-_0_1?color=white");
         var game = new Game("1", null,
                 new Player("user", 1),
-                new ArrayList<>(List.of(Knight.class, Pawn.class)), new DiceChessBoardImpl(board, playersPiecesUtils)
-                , null);
+                new ArrayList<>(List.of(Knight.class, Pawn.class)), new DiceChessBoardImpl(board, playersPiecesUtils));
         var result = fenUtils.fenFromGame(game);
         System.out.println(result);
     }

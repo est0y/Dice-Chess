@@ -12,7 +12,7 @@ import ru.est0y.diceChess.domain.pieces.Rook;
 import java.util.Map;
 
 @Service
-public class PieceCreatorImpl implements PieceCreatorManager {
+public class PieceCreatorManagerImpl implements PieceCreatorManager {
     private static final Map<Character, PieceCreator<?>> PIECE_CREATORS = Map.of(
             'b', Bishop::new,
             'n', Knight::new,

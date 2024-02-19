@@ -3,7 +3,7 @@ package ru.est0y.diceChess.services.movingPipeline;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.est0y.diceChess.domain.Game;
-import ru.est0y.diceChess.services.GameService;
+import ru.est0y.diceChess.services.data.GameService;
 import ru.est0y.diceChess.services.diceChess.AfterMovePipeline;
 import ru.est0y.diceChess.services.diceChess.GameStateFilter;
 import ru.est0y.diceChess.services.diceChess.LegalPiecesFilter;

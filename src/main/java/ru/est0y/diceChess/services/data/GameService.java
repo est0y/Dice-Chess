@@ -1,4 +1,4 @@
-package ru.est0y.diceChess.services;
+package ru.est0y.diceChess.services.data;
 
 import ru.est0y.diceChess.domain.Game;
 

@@ -1,4 +1,4 @@
-package ru.est0y.services.directions;
+package ru.est0y.diceChess.services.directions;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -19,6 +19,6 @@ class DirectionTest {
                 Direction.UP,
                 new BoardSize(8, 8)
         );
-        Mockito.verify(spy).getSquare(5,6);
+        Mockito.verify(spy).getSquare(4,6);
     }
 }

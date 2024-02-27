@@ -1,0 +1,31 @@
+server:
+  address: 127.0.0.1
+  port: 8080
+game:
+  board-size:
+    x: 8
+    y: 8
+
+security:
+  rememberMeKey: key
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:30002/mongod
+
+mongoDb:
+  databaseName: mongod
+
+mongock:
+  runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.est0y.diceChess.mongock.changelog
+  mongo-db:
+    write-concern:
+      journal: false
+    read-concern: local
+logging:
+  level:
+    org:
+      springframework:
+        security=DEBUG:

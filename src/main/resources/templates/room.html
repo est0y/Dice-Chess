@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DiceChess Online</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+          integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+          crossorigin="anonymous">
+    <style>
+.container {
+  display: flex;
+  align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.chess-board {
+
+  margin-right: 20px; /* Устанавливаем расстояние между доской и квадратами */
+}
+
+.chess-squares {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.chess-squares-inner {
+  display: flex;
+}
+
+.chess-square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.chess-piece {
+  width: 100%;
+  height: 100%;
+}
+
+#rollDiceButton {
+  margin-top: 10px; /* Устанавливаем отступ сверху кнопки */
+  display: none;
+}
+.chess-square + .chess-square {
+  margin-left: 20px; /* Расстояние между квадратами */
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="chess-board" id="myBoard" style="width: 650px"></div>
+    <div class="chess-squares">
+        <div class="chess-squares-inner">
+            <div class="chess-square" id="dice1">
+                <img class="chess-piece">
+            </div>
+            <div class="chess-square" id="dice2">
+                <img class="chess-piece">
+            </div>
+        </div>
+        <button id="rollDiceButton">Roll Dice</button>
+    </div>
+</div>
+<script src="https://chessboardjs.com/js/jquery-3.4.1.min.js"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+        crossorigin="anonymous"></script>
+<script th:attr="roomId=${roomId}" th:src="@{/js/room.js}"></script>
+<script  th:src="@{/js/moves.js}"></script>
+<script  th:src="@{/js/dice.js}"></script>
+<script>
+
+function onDragStart (source, piece, position, orientation) {
+  if ((orientation === 'white' && piece.search(/^w/) === -1) ||
+      (orientation === 'black' && piece.search(/^b/) === -1)) {
+    return false
+  }
+}
+
+function whiteOnDrop (source, target, piece, newPos, oldPos, orientation) {
+  var move=getNumMove(source,target);
+  stompClient.send('/app/game/id.'+roomId+'/move',{}, JSON.stringify(move));
+ return 'snapback'
+}
+
+function blackOnDrop (source, target, piece, newPos, oldPos, orientation) {
+  var move=getNumMove(source,target);
+  stompClient.send('/app/game/id.'+roomId+'/move',{}, JSON.stringify(move));
+ return 'snapback'
+}
+
+
+
+</script>
+</body>
+</html>
+
